@@ -7,52 +7,78 @@
   <link rel="stylesheet" href="style.css" />
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
-<body>
-  <main class="page">
-    <section class="hero">
-      <div class="photo-wrap">
-        <img src="assets/alberto.png" alt="Alberto Cotrim" class="photo" />
+<body class="site-body">
+  <main class="site-shell">
+    <section class="poster-hero">
+      <div class="light-string" aria-hidden="true"></div>
+
+      <div class="celebrate-card">
+        <span>Vamos</span>
+        <strong>celebrar</strong>
+        <p>Uma vida de histórias, amizades e conquistas!</p>
       </div>
-      <div class="content">
+
+      <div class="hero-person">
+        <img src="assets/alberto-festa.jpeg" alt="Alberto Cotrim sorrindo na festa" />
+      </div>
+
+      <div class="hero-copy">
         <p class="tag">Convite especial</p>
-        <h1>Alberto Cotrim</h1>
-        <h2>70 anos</h2>
-        <p class="date">11 de julho • a partir das 12:00</p>
-        <p class="place">Chácara Cantinho do Céu</p>
-        <p class="text">
-          Vamos celebrar essa data especial com churrasco fogo de chão,
-          música ao vivo, família, amigos e muita gratidão pela vida do Alberto.
+        <h1><span>Alberto</span> <strong>Cotrim</strong></h1>
+        <div class="age-mark">
+          <span>70</span>
+          <em>anos!</em>
+        </div>
+        <p class="hero-text">
+          Vamos celebrar essa data especial com <strong>churrasco fogo de chão</strong>,
+          <strong>música ao vivo</strong>, família e amigos. Contamos com a sua presença!
         </p>
-        <a href="#confirmacao" class="button">Confirmar presença</a>
       </div>
+
+      <div class="event-strip" aria-label="Informações do evento">
+        <article>
+          <span>Data</span>
+          <strong>11 de julho</strong>
+          <small>Sábado</small>
+        </article>
+        <article>
+          <span>Horário</span>
+          <strong>12:00</strong>
+          <small>A partir das</small>
+        </article>
+        <article>
+          <span>Local</span>
+          <strong>Chácara Cantinho do Céu</strong>
+          <small>Ambiente de chácara</small>
+        </article>
+      </div>
+
+      <a href="#confirmacao" class="hero-cta">
+        <strong>Confirmar presença!</strong>
+        <span>Clique aqui e garanta sua presença</span>
+      </a>
     </section>
 
-    <section class="details">
-      <div class="card">🔥 Churrasco fogo de chão</div>
-      <div class="card">🎶 Música ao vivo</div>
-      <div class="card">🌿 Ambiente de chácara</div>
-    </section>
-
-    <section class="experience" aria-label="Atrações da festa">
-      <article class="feature">
-        <img src="assets/musica-ao-vivo.jpg" alt="Sanfona em apresentação de música ao vivo" />
-        <div>
-          <p class="feature-label">Música ao vivo</p>
-          <h3>Forró, alegria e celebração</h3>
-        </div>
-      </article>
-      <article class="feature">
+    <section class="poster-attractions" aria-label="Atrações da festa">
+      <article class="attraction-card fire-card">
         <img src="assets/churrasco-fogo-de-chao.jpeg" alt="Churrasco fogo de chão sendo preparado" />
-        <div>
-          <p class="feature-label">Churrasco fogo de chão</p>
-          <h3>Almoço especial na chácara</h3>
+        <div class="attraction-label">
+          <span>Churrasco</span>
+          <strong>Fogo de chão</strong>
+        </div>
+      </article>
+      <article class="attraction-card music-card">
+        <img src="assets/musica-ao-vivo.jpg" alt="Sanfona em apresentação de música ao vivo" />
+        <div class="attraction-label">
+          <span>Música</span>
+          <strong>Ao vivo</strong>
         </div>
       </article>
     </section>
 
-    <section id="confirmacao" class="form-section">
+    <section id="confirmacao" class="form-section poster-form-section">
       <h3>Confirme sua presença</h3>
-      <p>Ajude-nos a organizar tudo com carinho para receber você.</p>
+      <p>Sua presença tornará esse dia ainda mais especial. Ajude-nos a organizar tudo com carinho.</p>
       <form id="rsvpForm">
         <label>Seu nome
           <input type="text" id="nome" required placeholder="Digite seu nome" />
