@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alberto Cotrim 70 anos</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="photo-wrap">
+        <img src="assets/alberto.png" alt="Alberto Cotrim" class="photo" />
+      </div>
+      <div class="content">
+        <p class="tag">Convite especial</p>
+        <h1>Alberto Cotrim</h1>
+        <h2>70 anos</h2>
+        <p class="date">11 de julho • a partir das 12:00</p>
+        <p class="place">Chácara Cantinho do Céu</p>
+        <p class="text">
+          Vamos celebrar essa data especial com churrasco fogo de chão,
+          música ao vivo, família, amigos e muita gratidão pela vida do Alberto.
+        </p>
+        <a href="#confirmacao" class="button">Confirmar presença</a>
+      </div>
+    </section>
+
+    <section class="details">
+      <div class="card">🔥 Churrasco fogo de chão</div>
+      <div class="card">🎶 Música ao vivo</div>
+      <div class="card">🌿 Ambiente de chácara</div>
+    </section>
+
+    <section id="confirmacao" class="form-section">
+      <h3>Confirme sua presença</h3>
+      <p>Ajude-nos a organizar tudo com carinho para receber você.</p>
+      <form id="rsvpForm">
+        <label>Seu nome
+          <input type="text" id="nome" required placeholder="Digite seu nome" />
+        </label>
+        <label>Telefone
+          <input type="tel" id="telefone" placeholder="(99) 99999-9999" />
+        </label>
+        <label>Você irá ao aniversário?
+          <select id="confirmacao_presenca" required>
+            <option value="">Selecione</option>
+            <option value="sim">Sim, estarei presente</option>
+            <option value="nao">Não poderei ir</option>
+          </select>
+        </label>
+        <label>Quantidade de pessoas
+          <input type="number" id="quantidade" min="1" value="1" required />
+        </label>
+        <label>Observação
+          <textarea id="observacao" rows="3" placeholder="Ex: irei com minha família"></textarea>
+        </label>
+        <button type="submit">Enviar confirmação</button>
+        <p id="message" class="message"></p>
+      </form>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

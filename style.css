@@ -1,0 +1,84 @@
+:root {
+  --green: #22392f;
+  --green-soft: #37594a;
+  --cream: #fbf4e8;
+  --gold: #c89545;
+  --brown: #6b3f24;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  background: linear-gradient(180deg, #182821, #2f4d40);
+  color: var(--cream);
+}
+.page { max-width: 1100px; margin: 0 auto; padding: 24px; }
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  min-height: 90vh;
+  align-items: center;
+}
+.photo-wrap {
+  border: 8px solid rgba(251,244,232,.85);
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,.35);
+  transform: rotate(-1.5deg);
+}
+.photo { width: 100%; height: 680px; object-fit: cover; display: block; }
+.content {
+  background: rgba(251,244,232,.1);
+  border: 1px solid rgba(251,244,232,.25);
+  border-radius: 28px;
+  padding: 42px;
+  backdrop-filter: blur(4px);
+}
+.tag { color: var(--gold); text-transform: uppercase; letter-spacing: 3px; font-size: 14px; }
+h1 { font-size: clamp(46px, 7vw, 84px); line-height: .95; margin: 10px 0 0; }
+h2 { color: var(--gold); font-size: clamp(38px, 5vw, 62px); margin: 6px 0 24px; }
+.date, .place { font-size: 23px; margin: 8px 0; font-weight: bold; }
+.text { font-size: 20px; line-height: 1.55; color: #fff8ed; }
+.button, button {
+  display: inline-block;
+  border: 0;
+  background: var(--gold);
+  color: #21160b;
+  padding: 16px 24px;
+  border-radius: 999px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 17px;
+}
+.details { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 24px 0; }
+.card { background: var(--cream); color: var(--green); padding: 22px; border-radius: 20px; font-size: 20px; text-align: center; font-weight: bold; }
+.form-section {
+  background: var(--cream);
+  color: var(--green);
+  border-radius: 28px;
+  padding: 34px;
+  margin: 28px 0 50px;
+}
+h3 { font-size: 34px; margin: 0 0 8px; }
+form { display: grid; gap: 16px; margin-top: 22px; }
+label { display: grid; gap: 7px; font-weight: bold; }
+input, select, textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #cbbda8;
+  border-radius: 12px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+}
+.message { font-weight: bold; }
+@media (max-width: 800px) {
+  .page { padding: 14px; }
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .photo { height: 460px; }
+  .content { padding: 26px; }
+  .details { grid-template-columns: 1fr; }
+}
