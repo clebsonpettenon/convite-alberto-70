@@ -33,6 +33,23 @@
       <div class="card">🌿 Ambiente de chácara</div>
     </section>
 
+    <section class="experience" aria-label="Atrações da festa">
+      <article class="feature">
+        <img src="assets/musica-ao-vivo.jpg" alt="Sanfona em apresentação de música ao vivo" />
+        <div>
+          <p class="feature-label">Música ao vivo</p>
+          <h3>Forró, alegria e celebração</h3>
+        </div>
+      </article>
+      <article class="feature">
+        <img src="assets/churrasco-fogo-de-chao.jpeg" alt="Churrasco fogo de chão sendo preparado" />
+        <div>
+          <p class="feature-label">Churrasco fogo de chão</p>
+          <h3>Almoço especial na chácara</h3>
+        </div>
+      </article>
+    </section>
+
     <section id="confirmacao" class="form-section">
       <h3>Confirme sua presença</h3>
       <p>Ajude-nos a organizar tudo com carinho para receber você.</p>
@@ -41,7 +58,7 @@
           <input type="text" id="nome" required placeholder="Digite seu nome" />
         </label>
         <label>Telefone
-          <input type="tel" id="telefone" placeholder="(99) 99999-9999" />
+          <input type="tel" id="telefone" inputmode="numeric" autocomplete="tel" maxlength="15" placeholder="(99) 99999-9999" />
         </label>
         <label>Você irá ao aniversário?
           <select id="confirmacao_presenca" required>
@@ -53,6 +70,11 @@
         <label>Quantidade de pessoas
           <input type="number" id="quantidade" min="1" value="1" required />
         </label>
+        <div id="acompanhantes" class="companions" hidden>
+          <h4>Acompanhantes</h4>
+          <p>Informe o nome das pessoas adicionais e marque quando for criança menor de 8 anos.</p>
+          <div id="acompanhantesFields" class="companions-fields"></div>
+        </div>
         <label>Observação
           <textarea id="observacao" rows="3" placeholder="Ex: irei com minha família"></textarea>
         </label>

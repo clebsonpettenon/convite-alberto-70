@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin - Alberto Cotrim 70 anos</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body class="admin-body">
+  <main class="admin-page">
+    <header class="admin-header">
+      <div>
+        <p class="tag">Área administrativa</p>
+        <h1>Confirmações</h1>
+        <p>Relatório para acompanhar presença, acompanhantes e estimativa de custos da festa.</p>
+      </div>
+      <a href="index.html" class="button secondary-button">Ver convite</a>
+    </header>
+
+    <section id="loginPanel" class="admin-panel">
+      <h2>Acesso administrativo</h2>
+      <form id="loginForm" class="admin-form">
+        <label>E-mail
+          <input type="email" id="adminEmail" autocomplete="email" required placeholder="seu-email@exemplo.com" />
+        </label>
+        <label>Senha
+          <input type="password" id="adminPassword" autocomplete="current-password" required placeholder="Digite sua senha" />
+        </label>
+        <button type="submit">Entrar</button>
+      </form>
+      <p id="loginMessage" class="message"></p>
+    </section>
+
+    <section id="dashboard" hidden>
+      <div class="admin-toolbar">
+        <p id="adminUser"></p>
+        <div>
+          <button type="button" id="refreshButton">Atualizar</button>
+          <button type="button" id="exportButton" class="secondary-button">Exportar CSV</button>
+          <button type="button" id="logoutButton" class="secondary-button">Sair</button>
+        </div>
+      </div>
+
+      <section class="summary-grid" aria-label="Resumo das confirmações">
+        <article class="summary-card">
+          <span>Total confirmado</span>
+          <strong id="totalPeople">0</strong>
+          <small>pessoas para preparar a festa</small>
+        </article>
+        <article class="summary-card">
+          <span>Adultos e 8+</span>
+          <strong id="adultPeople">0</strong>
+          <small>base principal de custo</small>
+        </article>
+        <article class="summary-card">
+          <span>Crianças menores de 8</span>
+          <strong id="childPeople">0</strong>
+          <small>marcadas nos acompanhantes</small>
+        </article>
+        <article class="summary-card">
+          <span>Grupos confirmados</span>
+          <strong id="confirmedGroups">0</strong>
+          <small>respostas com presença</small>
+        </article>
+        <article class="summary-card">
+          <span>Não poderão ir</span>
+          <strong id="declinedGroups">0</strong>
+          <small>respostas negativas</small>
+        </article>
+        <article class="summary-card">
+          <span>Detalhes pendentes</span>
+          <strong id="missingDetails">0</strong>
+          <small>acompanhantes sem cadastro individual</small>
+        </article>
+      </section>
+
+      <section class="admin-panel cost-panel">
+        <div>
+          <h2>Estimativa de custo</h2>
+          <p>Informe valores médios para calcular uma previsão rápida. Os valores ficam salvos neste navegador.</p>
+        </div>
+        <div class="cost-grid">
+          <label>Valor por adulto ou 8+
+            <input type="number" id="adultCost" min="0" step="0.01" placeholder="0,00" />
+          </label>
+          <label>Valor por criança menor de 8
+            <input type="number" id="childCost" min="0" step="0.01" placeholder="0,00" />
+          </label>
+          <label>Custo fixo
+            <input type="number" id="fixedCost" min="0" step="0.01" placeholder="0,00" />
+          </label>
+        </div>
+        <div class="cost-total">
+          <span>Total estimado</span>
+          <strong id="estimatedCost">R$ 0,00</strong>
+          <small id="costBreakdown"></small>
+        </div>
+      </section>
+
+      <section class="admin-panel">
+        <div class="table-header">
+          <div>
+            <h2>Lista de confirmações</h2>
+            <p id="adminMessage" class="message"></p>
+          </div>
+          <div class="filters">
+            <label>Buscar
+              <input type="search" id="searchInput" placeholder="Nome, telefone ou observação" />
+            </label>
+            <label>Status
+              <select id="statusFilter">
+                <option value="todos">Todos</option>
+                <option value="sim">Confirmados</option>
+                <option value="nao">Não vão</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Data</th>
+                <th>Nome</th>
+                <th>Telefone</th>
+                <th>Status</th>
+                <th>Pessoas</th>
+                <th>Adultos/8+</th>
+                <th>Crianças &lt; 8</th>
+                <th>Acompanhantes</th>
+                <th>Observação</th>
+              </tr>
+            </thead>
+            <tbody id="confirmationsTable"></tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+  </main>
+  <script src="admin.js"></script>
+</body>
+</html>
